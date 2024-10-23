@@ -8,6 +8,7 @@ let obj = {
 };
 
 
+
 for( let index of array){
 console.log(obj.index)
 }
