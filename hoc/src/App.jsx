@@ -1,9 +1,16 @@
 import "./App.css";
 import HOC from "./compoenents/Counter";
 import React, { useState } from "react";
-import {  createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Link,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./compoenents/Home";
 import About from "./compoenents/About";
+import Navbar from "./compoenents/navbar";
+import MainLayOut from "./compoenents/MainLayOut";
 
 // const Counter = () => {
 //   const [count, setCount] = useState(0);
@@ -23,20 +30,26 @@ import About from "./compoenents/About";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <About />,
+    element: <MainLayOut />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 
 function App() {
   return (
     <>
-    
       {/* <HOC Counter={Counter()} color={"red"} />
       <HOC Counter={Counter()} color={"green"} /> */}
+
       <RouterProvider router={router} />
     </>
   );
