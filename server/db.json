@@ -1,0 +1,20 @@
+{
+  "todoList":[
+    {
+      "id":1,
+      "title": "Buy groceries",
+      "completed": false
+    },
+    {
+      "id":2,
+      "title": "Clean the house",
+      "completed": true
+    },
+    {
+      "id":3,
+      "title": "Study for exams",
+      "completed": false
+    }
+  ]
+
+}
